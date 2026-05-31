@@ -4,10 +4,20 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-      <bean id="normalCar" class="com.example.demo.NormalCar"></bean>
-      <bean id="sportsCar" class="com.example.demo.sportsCar"></bean>
-      <bean id="truck" class="com.example.demo.truck"></bean>
+        
+        
+      <bean id="normalTyre" class="com.example.demo.NormalTyre"></bean>
+      <bean id="sportsTyre" class="com.example.demo.SportsTyre"></bean>
+      <bean id="heavyTyre" class="com.example.demo.HeavyTyre"></bean>
+      
+      <bean id="normalCar" class="com.example.demo.NormalCar">
+      <constructor-arg ref="normalTyre"></constructor-arg>
+      </bean>
+      <bean id="sportsCar" class="com.example.demo.sportsCar">
+        <constructor-arg ref="sportsTyre"></constructor-arg></bean>
+      <bean id="truck" class="com.example.demo.truck">
+           <constructor-arg ref="heavyTyre"></constructor-arg>
+      </bean>
     
 
 </beans>
